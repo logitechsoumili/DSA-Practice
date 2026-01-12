@@ -15,7 +15,7 @@ public class TwoSum {
                 j--;
             }
         }
-        return new int[]{-1, -1};    // safety
+        return new int[]{-1, -1};
     }
 
     public static void main(String[] args) {
