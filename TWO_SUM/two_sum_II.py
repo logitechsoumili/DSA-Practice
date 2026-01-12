@@ -10,7 +10,7 @@ The tests are generated such that there is exactly one solution. You may not use
 Your solution must use only constant extra space.
 '''
 
-# BRUTE FORCE SOLUTION (O(n^2); unsorted)
+# BRUTE FORCE SOLUTION (O(n^2); unsorted/sorted)
 '''
 def brute_force(arr, target):
     sum_ = 0
@@ -21,7 +21,7 @@ def brute_force(arr, target):
     return None
 '''
 
-# BETTER SOLUTION (O(n); unsorted)
+# BETTER SOLUTION (O(n); unsorted/sorted)
 '''
 def better(arr, target):
     index_map = {}
@@ -32,7 +32,7 @@ def better(arr, target):
         index_map[val] = i
 '''
 
-# OPTIMISED SOLUTION (O(n); sorted)
+# OPTIMISED SOLUTION (O(n) -> sorted; O(nlogn) -> unsorted)
 def optimised(arr, target):
     i, j = 0, len(arr) - 1
     while i < j:
