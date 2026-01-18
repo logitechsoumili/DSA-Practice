@@ -18,7 +18,7 @@ I am using this repo to:
 ---
 
 ## What this repository contains
-- Problem-wise folders
+- Pattern-wise folders
 - Multiple approaches for the same problem (brute force, better, optimized)
 - Language-wise implementations for comparison
 - Notes and comments to understand *why* a solution works, not just *how*
