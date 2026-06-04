@@ -37,17 +37,18 @@ even though the original array is already sorted.
 '''
 def sortedSquares_merge(arr):
     if not arr:
-        return []
+        return [] # for empty list
 
     neg, pos = [], []
 
     for i in range(len(arr)-1): # case where negative and positive elements are both present
-        if arr[i] < 0 and arr[i+1] >= 0:
-            neg = [x**2 for x in arr[:i+1]][::-1]
-            pos = [x**2 for x in arr[i+1:]]
+        if arr[i] < 0 and arr[i+1] >= 0: # checks the end point of the negative elements and starting of positive elements: neg|pos
+            neg = [x**2 for x in arr[:i+1]][::-1] # squaring the negative elements part i.e. from beginning till i and reversing it
+            pos = [x**2 for x in arr[i+1:]] # squaring the postive elements part i.e from i+1 till end of list
             break
 
-    if not neg and not pos: # case when all elements are either positive or negative
+    if not neg and not pos: # case when all elements are either positive or negative 
+                            # i.e. the previous loop couldn't find an intersection where the list elements have different signs
         if arr[0] >= 0:
             pos = [x**2 for x in arr]
             return pos
@@ -55,6 +56,7 @@ def sortedSquares_merge(arr):
             neg = [x**2 for x in arr]
             return neg[::-1]
 
+    # merge 2 arrays using 2 pointers logic
     res = []
     i, j = 0, 0
 
